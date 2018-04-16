@@ -1,18 +1,16 @@
-const show = require('./show');
+const show = require("./show");
+//
+// const { assert, dir, info, log, trace } = console;
+//
+const map1 = (fn, arr) =>
+  arr.reduce((acc, item, index, arr) => acc.concat(fn(item, index, arr)), []);
 
-const { assert, dir, info, log, trace } = console;
+const arr1 = [1, 2, 3, 4, 5, 6, 7];
 
-// const map1 = (fn, arr) =>
-//   arr.reduce((acc, item, index, arr) => {
-//     return acc.concat(fn(item, index, arr));
-//   }, []);
-//
-// const arr1 = [1, 2, 3, 4, 5, 6, 7];
-//
-// const arr2 = map1(arr1 => arr1, arr1);
-//
-// show('arr1', arr1);
-// show('arr2', arr2);
+const arr2 = map1(arr1 => arr1, arr1);
+
+show("arr1", arr1);
+show("arr2", arr2);
 //
 // const map2 = (fn, arr) =>
 //   arr.reduce((acc, item, index, arr) => {
